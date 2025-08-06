@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <title>Registration Form</title>
+     <style>
+        body {
+            background-color:rgb(178, 87, 45); 
+
+            font-family: Arial;
+        }
+    </style>
+</head>
+<body>
+    <centre><div class="form-container" id="RegistrationForm"></div>
+        <h2>Registration Form</h2>
+        <form id="RegistarionForm" onsubmit="return ValidateForm()">
+            <label for="name">Full Name</label>
+            <input type="text" id="Name" required><br><br>
+            <label for="email">Email</label>
+            <input type="email" id="email" required><br><br>
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" required pattern="[0-9]{10}"><br><br>
+            <label for="event">Select Event Type:</label>
+            <select id="event" required>
+            <option value="">-- Select Event --</option>
+            <option value="Workshop">Workshop</option>
+            <option value="Seminar">Seminar</option>
+            <option value="Webinar">Webinar</option>
+            </select><br><br>
+            <button type="submit">Register</button>
+        </form>
+    </centre>
+    <script>
+        function validateForm() { 
+            const phone = document.getElementById('phone').value; 
+            if (!/^\d{10}$/.test(phone)) { 
+                 alert('Invalid phone number');       
+                    return false; 
+          } 
+                alert('Registration Successful!'); 
+                return true; 
+        }
+    </script>
+</body>
+</html>
